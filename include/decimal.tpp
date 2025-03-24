@@ -282,6 +282,8 @@ template <std::size_t bits> auto Decimal<bits>::conversion(const std::cmatch& ma
   }
 
   std::size_t bit{}, value{}, carry{};
+
+  m_mantissa.reset();
   while(!digits.empty()) {
     m_mantissa.set(bit++, digits.back() & 1);
 
